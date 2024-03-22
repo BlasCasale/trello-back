@@ -20,7 +20,7 @@ dotenv_1.default.config();
 const PORT = (_a = process.env.PORT) !== null && _a !== void 0 ? _a : 8001;
 server_1.default.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield db_1.default.sync({ alter: false });
+        yield db_1.default.sync({ alter: true });
         console.log(`Listening on port ${PORT}`);
     }
     catch (error) {

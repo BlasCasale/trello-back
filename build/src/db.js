@@ -13,10 +13,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
+const dotenv_1 = __importDefault(require("dotenv"));
 const sequelize_1 = require("sequelize");
 const UserFunc_1 = __importDefault(require("./Model/UserFunc"));
 const LogFunc_1 = __importDefault(require("./Model/LogFunc"));
 const SessionFunc_1 = __importDefault(require("./Model/SessionFunc"));
+dotenv_1.default.config();
 const DB_NAME = process.env.DB_NAME;
 const DB_PASS = process.env.DB_PASS;
 const DB_PORT = process.env.DB_PORT;
@@ -27,7 +29,7 @@ const connectToDataBase = () => __awaiter(void 0, void 0, void 0, function* () {
         yield db.authenticate();
     }
     catch (error) {
-        console.error('Error al conectar la base de datos', error);
+        console.error('Error al conectar la base de datos \n', error);
     }
 });
 void connectToDataBase();

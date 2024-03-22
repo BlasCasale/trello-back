@@ -21,6 +21,10 @@ const LogFunc = (sequelize) => {
             type: sequelize_1.DataTypes.ARRAY(sequelize_1.DataTypes.JSON()),
             defaultValue: [],
             allowNull: false
+        },
+        dayLimit: {
+            type: sequelize_1.DataTypes.DATEONLY,
+            allowNull: false
         }
     }, {
         indexes: [
