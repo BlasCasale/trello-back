@@ -1,6 +1,6 @@
 import express from 'express'
 import morgan from 'morgan'
-import router from './router'
+import router from './router/index.routes'
 const server = express()
 
 server.use(morgan('dev'))

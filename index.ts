@@ -1,12 +1,13 @@
 import server from './src/server'
-
+import db from './src/db'
 import dotenv from 'dotenv'
 dotenv.config()
-const port: string | undefined = process.env.PORT ?? '3000'
+const PORT = process.env.PORT ?? 8001
 
-server.listen(port, () => {
+server.listen(PORT, async () => {
   try {
-    console.log(`Listening on port ${port}`)
+    await db.sync({ alter: true })
+    console.log(`Listening on port ${PORT}`)
   } catch (error) {
     console.error(error)
   }
